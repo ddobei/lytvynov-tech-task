@@ -50,3 +50,9 @@ This project is a Symfony application for retrieving weather data from an API. I
    ```
 
 6. Open [http://localhost:8080](http://localhost:8080) with your browser
+
+7. To run unit test run command:
+   ```bash
+   docker compose run --rm php82-service bash -c "bin/phpunit"
+
+   ```
