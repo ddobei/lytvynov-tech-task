@@ -1,0 +1,27 @@
+services:
+    nginx-service:
+        image: nginx:stable-alpine
+        container_name: nginx-container
+        ports:
+            - "8080:80"
+        volumes:
+            - ./app:/var/www/project
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - php82-service
+        networks:
+            - nginx_php82
+    php82-service:
+        build:
+            context: .
+            dockerfile: ./docker/php/Dockerfile
+        container_name: php82-container
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./app:/var/www/project
+        networks:
+            - nginx_php82
+
+networks:
+    nginx_php82:

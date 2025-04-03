@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather{% endblock %}
+
+{% block body %}
+    <h1>Weather</h1>
+    <table>
+        <tr>
+            <td>Country</td>
+            <td>{{ weather.country }}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>{{ weather.city }}</td>
+        </tr>
+        <tr>
+            <td>Temp. °C</td>
+            <td>{{ weather.temperature }}</td>
+        </tr>
+        <tr>
+            <td>Condition</td>
+            <td>{{ weather.condition }}</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{ weather.humidity }}</td>
+        </tr>
+        <tr>
+            <td>Wind speed</td>
+            <td>{{ weather.windSpeed }}</td>
+        </tr>
+        <tr>
+            <td>Last updated</td>
+            <td>{{ weather.lastUpdated }}</td>
+        </tr>
+    </table>
+{% endblock %}
